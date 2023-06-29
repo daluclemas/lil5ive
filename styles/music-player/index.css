@@ -1,0 +1,486 @@
+@import url("../utils.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --black-color: #000000;
+  --bastille-color: #313132;
+  --white-color: #ffffff;
+  --socials-color: #c4c4c4;
+  --red-color: #ff0000;
+  --white-smoke: #eeeeee;
+}
+
+::-webkit-scrollbar {
+  background-color: var(--white-smoke);
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--bastille-color);
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+}
+
+@font-face {
+  font-family: Twcenmt;
+  src: url("../../assets/fonts/tw-cen-mt-std-light.otf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: ronet;
+  src: url("../../assets/fonts/Ronet-DEMO.ttf");
+}
+
+body {
+  background-color: var(--black-color);
+  background-image: url("../../assets/images/vector-bg-mobile.png");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100% contain;
+  background-position: right bottom;
+  color: var(--white-color);
+  font-family: Twcenmt;
+  /* overflow: hidden; */
+}
+
+.home-page-content {
+  background-image: url("../../assets/images/man-bg-mobile.png");
+  /* background-image: url("../../assets/images/music-player/music-player-bg.png"); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  background-attachment: fixed;
+}
+
+/* sidebar */
+.side-bar {
+  display: none;
+}
+
+.page-content {
+  _border: 2px solid red;
+  height: 100%;
+  padding-top: 20px;
+}
+
+/* header */
+header {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 53px;
+  height: 40px;
+  background-image: url("../../assets/images/Wild-life-white-mobile.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.logo a {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.hamburger-search-wrapper {
+  align-items: center;
+  gap: 40px;
+  cursor: pointer;
+}
+
+.search-icon {
+  width: 35px;
+  height: 35px;
+  display: none;
+}
+
+.search-icon button {
+  color: var(--white-color);
+  font-size: 20px;
+}
+
+.hamburger-icon button {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.hamburger-icon button span {
+  width: 27px;
+  height: 3px;
+  margin: 0 0 5px;
+  display: block;
+  background-color: var(--white-color);
+}
+
+.hamburger-icon button span:nth-child(3) {
+  width: 20px;
+}
+
+/* navigation bar */
+nav {
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  background: rgba(37, 37, 37, 0.5);
+  backdrop-filter: blur(50px);
+  z-index: 2;
+  width: 265px;
+  transform: translateX(-1000px);
+  transition: 0.3s linear;
+}
+
+.active {
+  transform: translateX(0);
+}
+
+.menu-items-container {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.nav {
+  width: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.nav-items a {
+  font-size: 16px;
+  color: var(--white-color);
+  text-transform: capitalize;
+}
+
+.socials {
+  width: 100%;
+  list-style-type: none;
+  margin: 20px 0 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.socials li a {
+  font-size: 16px;
+  color: var(--white-color);
+}
+
+.socials li a .fa-play {
+  color: var(--red-color);
+}
+
+.sidebar-logo {
+  width: 89px;
+  height: 42px;
+}
+
+.music-lists-container {
+  margin: 40px auto 0;
+  background-image: url("../../assets/images/LIL5IVE-mobile.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.list-of-music-player {
+  _border: 2px solid green;
+  height: 62vh;
+  overflow-y: auto;
+  background-color: rgba(49, 49, 50, 0.7);
+  padding: 20px;
+}
+
+.music-list {
+  padding: 0 10px 0 0;
+}
+
+.all-songs {
+  margin-bottom: 20px;
+  border-bottom: 1px solid white;
+  padding-bottom: 5px;
+}
+
+.music-list li {
+  width: 70%;
+  margin-bottom: 25px;
+  font-size: 20px;
+  text-transform: capitalize;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.controls {
+}
+
+.thumbnail-image {
+  background-image: url("../../assets/images/song-thumbnails/pharrell-williams.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  animation: rotateDisc 2s linear infinite;
+}
+
+.inner-circle {
+  width: 20px;
+  height: 20px;
+  display: block;
+  border-radius: 50%;
+  border: 2px solid white;
+  background-color: var(--black-color);
+}
+
+@keyframes rotateDisc {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.audio-progress {
+  width: 100%;
+  text-align: center;
+  margin: 20px 0;
+}
+
+#progress {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 3px;
+  /* max-width: 248px; */
+  width: 100%;
+  background-color: var(--white-smoke);
+  cursor: pointer;
+}
+
+#progress::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid white;
+  background: var(--bastille-color);
+  border-radius: 50%;
+}
+
+.audio-controls {
+  list-style-type: none;
+  display: flex;
+  margin: 20px 0 0;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.audio-controls li {
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.audio-controls .play {
+  border: 2px solid white;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+@media screen and (max-width: 767px) {
+  .controls-section {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 0 0 10px;
+    background: var(--bastille-color);
+  }
+
+  .controls {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .thumbnail-image {
+    width: 70px;
+    height: 70px;
+    margin: 0;
+  }
+
+  .controls-wrapper {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  body {
+    background-image: url("../../assets/images/wavy-vector-bg.png");
+    background-size: auto 100vh;
+    background-position: right bottom;
+  }
+
+  .home-page-content {
+    background-image: url("../../assets/images/man-bg.png");
+    background-size: auto 100vh;
+    background-position: right bottom;
+  }
+
+  nav {
+    width: 563px;
+  }
+
+  .nav-items a {
+    font-size: 36px;
+  }
+
+  .socials {
+    margin: 40px 0 0;
+  }
+
+  .socials li a {
+    font-size: 24px;
+    color: var(--white-color);
+  }
+
+  .sidebar-logo {
+    display: none;
+  }
+
+  #progress {
+    max-width: 400px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .side-bar {
+    width: 92px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    background-color: var(--bastille-color);
+  }
+
+  .icons-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    list-style-type: none;
+  }
+
+  .icons-container a {
+    color: var(--socials-color);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 18px;
+  }
+
+  .icon-wrapper {
+    width: 35px;
+    height: 35px;
+    border: 2px solid var(--socials-color);
+    border-radius: 50%;
+  }
+
+  .play a {
+    color: var(--red-color);
+  }
+
+  /* main content of the page */
+
+  .page-content {
+    position: relative;
+    width: calc(100% - 92px);
+    left: 92px;
+    padding-top: 55px;
+  }
+
+  .search-icon {
+    display: block;
+  }
+
+  .hamburger-icon button span {
+    width: 30px;
+    height: 3px;
+  }
+
+  /* header */
+  .logo {
+    width: 128px;
+    height: 61px;
+    background-image: url("../../assets/images/wild-life-white-logo.png");
+  }
+
+  .music-lists-container {
+    display: flex;
+    gap: 40px;
+    background-image: url("../../assets/images/LIL5IVE.png");
+    align-items: flex-end;
+  }
+
+  .controls-section {
+    width: 60%;
+  }
+
+  .list-of-music-player {
+    width: 40%;
+    height: 75vh;
+  }
+
+  .inner-circle {
+    width: 80px;
+    height: 80px;
+  }
+
+  .audio-controls li {
+    font-size: 32px;
+  }
+
+  .audio-controls .play {
+    width: 70px;
+    height: 70px;
+  }
+
+  .music-list li {
+    width: 80%;
+  }
+}

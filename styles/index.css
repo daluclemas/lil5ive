@@ -1,0 +1,493 @@
+@import url("./utils.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --black-color: #000000;
+  --bastille-color: #313132;
+  --white-color: #ffffff;
+  --socials-color: #c4c4c4;
+  --red-color: #ff0000;
+  --white-smoke: #eeeeee;
+}
+
+::-webkit-scrollbar {
+  background-color: var(--white-smoke);
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--bastille-color);
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+}
+
+@font-face {
+  font-family: Twcenmt;
+  src: url("../assets/fonts/tw-cen-mt-std-light.otf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: ronet;
+  src: url("../assets/fonts/Ronet-DEMO.ttf");
+}
+
+body {
+  background-color: var(--black-color);
+  background-image: url("../assets/images/vector-bg-mobile.png");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100% contain;
+  background-position: right bottom;
+  color: var(--white-color);
+  font-family: Twcenmt;
+  /* overflow: hidden; */
+}
+
+.home-page-content {
+  _border: 2px solid red;
+  background-image: url("../assets/images/man-bg-mobile.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right bottom;
+  overflow: hidden;
+  background-attachment: fixed;
+}
+
+/* sidebar */
+.side-bar {
+  display: none;
+}
+
+.page-content {
+  _border: 2px solid red;
+  height: 100%;
+  padding-top: 20px;
+}
+
+/* header */
+header {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 53px;
+  height: 40px;
+  background-image: url("../assets/images/Wild-life-white-mobile.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.logo a {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.hamburger-search-wrapper {
+  align-items: center;
+  gap: 40px;
+  cursor: pointer;
+}
+
+.search-icon {
+  width: 35px;
+  height: 35px;
+  display: none;
+}
+
+.search-icon button {
+  color: var(--white-color);
+  font-size: 20px;
+}
+
+.hamburger-icon button {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.hamburger-icon button span {
+  width: 27px;
+  height: 3px;
+  margin: 0 0 5px;
+  display: block;
+  background-color: var(--white-color);
+}
+
+.hamburger-icon button span:nth-child(3) {
+  width: 20px;
+}
+
+.angle-container {
+  width: 100%;
+  margin: 10px 0;
+  display: none;
+}
+
+.angle-container figure {
+  width: 97.27px;
+  height: 99.27px;
+  background-image: url("../assets/images/Angle.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: auto;
+}
+
+.now-playing-section {
+  _border: 2px solid blue;
+  margin-top: 210px;
+  min-height: 300px;
+  background-image: url("../assets/images/LIL5IVE-mobile.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  padding: 20px 0 10px;
+}
+
+.new-single-wrapper {
+  _border: 1px solid white;
+  max-width: 629px;
+  width: 100%;
+  padding: 10px 0 10px;
+}
+
+.new-single {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  text-align: center;
+}
+
+.new-single-wrapper p {
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 2.5px;
+}
+
+.new-single-wrapper .happy {
+  font-family: ronet;
+  text-transform: capitalize;
+  font-size: 72px;
+  text-align: center;
+}
+
+.play-button {
+  width: 41px;
+  height: 41px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 2px solid var(--white-color);
+  margin: 20px auto;
+}
+
+.play-button button {
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.audio-progress {
+  width: 100%;
+  text-align: center;
+}
+
+#progress {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 3px;
+  max-width: 248px;
+  width: 100%;
+  background-color: var(--white-smoke);
+  cursor: pointer;
+}
+
+#progress::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid white;
+  background: var(--bastille-color);
+  border-radius: 50%;
+}
+
+.side-ellipse {
+  background-color: rgba(49, 49, 50, 0.7);
+  border-radius: 50%;
+  position: fixed;
+  width: 263.33px;
+  height: 263.33px;
+  bottom: -50px;
+  right: -200px;
+}
+
+.bottom-ellipse {
+  display: none;
+}
+
+/* navigation bar */
+nav {
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  background: rgba(37, 37, 37, 0.5);
+  backdrop-filter: blur(50px);
+  z-index: 2;
+  width: 265px;
+  transform: translateX(-1000px);
+  transition: 0.3s linear;
+}
+
+.active {
+  transform: translateX(0);
+}
+
+.menu-items-container {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.nav {
+  width: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.nav-items a {
+  font-size: 16px;
+  color: var(--white-color);
+  text-transform: capitalize;
+}
+
+.socials {
+  width: 100%;
+  list-style-type: none;
+  margin: 20px 0 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.socials li a {
+  font-size: 16px;
+  color: var(--white-color);
+}
+
+.socials li a .fa-play {
+  color: var(--red-color);
+}
+
+.sidebar-logo {
+  width: 89px;
+  height: 42px;
+}
+
+@media screen and (min-width: 640px) {
+  body {
+    background-image: url("../assets/images/wavy-vector-bg.png");
+    background-size: auto 100vh;
+    background-position: right bottom;
+  }
+
+  .home-page-content {
+    background-image: url("../assets/images/man-bg.png");
+    background-size: auto 100vh;
+    background-position: right bottom;
+  }
+
+  .new-single {
+    font-size: 3rem;
+  }
+
+  nav {
+    width: 563px;
+  }
+
+  .nav-items a {
+    font-size: 36px;
+  }
+
+  .socials {
+    margin: 40px 0 0;
+  }
+
+  .socials li a {
+    font-size: 24px;
+    color: var(--white-color);
+  }
+
+  .sidebar-logo {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .side-bar {
+    width: 92px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    background-color: var(--bastille-color);
+  }
+
+  .icons-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    list-style-type: none;
+  }
+
+  .icons-container a {
+    color: var(--socials-color);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 18px;
+  }
+
+  .icon-wrapper {
+    width: 35px;
+    height: 35px;
+    border: 2px solid var(--socials-color);
+    border-radius: 50%;
+  }
+
+  .play a {
+    color: var(--red-color);
+  }
+
+  /* main content of the page */
+
+  .page-content {
+    position: relative;
+    width: calc(100% - 92px);
+    left: 92px;
+    padding-top: 55px;
+  }
+
+  .search-icon {
+    display: block;
+  }
+
+  .hamburger-icon button span {
+    width: 30px;
+    height: 3px;
+  }
+
+  /* header */
+  .logo {
+    width: 128px;
+    height: 61px;
+    background-image: url("../assets/images/wild-life-white-logo.png");
+  }
+
+  nav {
+    width: 563px;
+  }
+
+  .angle-container {
+    display: block;
+  }
+
+  .now-playing-section {
+    padding-top: 0;
+    margin-top: 40px;
+    min-height: auto;
+    background-image: url("../assets/images/LIL5IVE.png");
+  }
+
+  .new-single {
+    font-size: 3.5rem;
+  }
+
+  .new-single-wrapper {
+    padding: 0;
+  }
+
+  .new-single-wrapper p {
+    font-size: 1.125rem;
+    letter-spacing: 3.51px;
+  }
+
+  .new-single-wrapper .happy {
+    font-size: 144px;
+    padding-left: 20px;
+  }
+
+  .play-button {
+    width: 80px;
+    height: 80px;
+  }
+
+  .play-button button {
+    font-size: 42px;
+  }
+
+  #progress {
+    max-width: 400px;
+  }
+
+  .side-ellipse {
+    width: 579px;
+    height: 579px;
+    bottom: -320px;
+    right: -190px;
+  }
+
+  .bottom-ellipse {
+    display: block;
+    position: fixed;
+    border-radius: 50%;
+    background-color: rgba(49, 49, 50, 0.7);
+    width: 285px;
+    height: 285px;
+    bottom: -250px;
+    left: 150px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  body {
+    background-size: contain;
+    background-position: right bottom;
+  }
+
+  .home-page-content {
+    background-size: contain;
+    background-position: right bottom;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .home-page-content {
+    background-size: cover;
+  }
+}
